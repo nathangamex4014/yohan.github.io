@@ -1,0 +1,243 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Cinzel', serif;
+  background:#090909;
+  color:white;
+  overflow:hidden;
+  height:100vh;
+}
+
+.background{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:
+  radial-gradient(circle at center,
+  #1f1f2e 0%,
+  #090909 70%);
+  z-index:-1;
+}
+
+.wheel-container{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:400px;
+  height:400px;
+}
+
+.center-circle{
+  position:absolute;
+  width:120px;
+  height:120px;
+  background:rgba(255,255,255,.05);
+  border:2px solid rgba(255,215,120,.3);
+  border-radius:50%;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  backdrop-filter:blur(10px);
+  box-shadow:0 0 20px rgba(255,215,120,.1);
+}
+
+.wheel-btn{
+  position:absolute;
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  border:none;
+  cursor:pointer;
+
+  background:rgba(255,255,255,.05);
+
+  color:white;
+
+  backdrop-filter:blur(5px);
+
+  transition:.3s;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  font-size:26px;
+}
+
+.wheel-btn span{
+  font-size:12px;
+  margin-top:5px;
+}
+
+.wheel-btn:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 20px rgba(255,215,120,.4);
+}
+
+.top{
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.right{
+  right:0;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+.bottom{
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.left{
+  left:0;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+.panel{
+  position:absolute;
+  right:30px;
+  top:50%;
+  transform:translateY(-50%);
+
+  width:350px;
+  min-height:400px;
+
+  background:rgba(0,0,0,.6);
+
+  border:1px solid rgba(255,215,120,.2);
+
+  border-radius:20px;
+
+  backdrop-filter:blur(10px);
+
+  padding:20px;
+
+  box-shadow:0 0 20px rgba(0,0,0,.5);
+}
+
+.hidden{
+  display:none;
+}
+
+.panel h2{
+  margin-bottom:20px;
+  text-align:center;
+}
+
+.equipment-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+}
+
+.slot{
+  height:70px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:10px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:30px;
+}
+
+.stats{
+  margin-top:20px;
+}
+
+.inventory-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  margin-top:20px;
+}
+
+.item{
+  height:70px;
+  background:rgba(255,255,255,.05);
+  border-radius:10px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:28px;
+}
+
+.empty{
+  opacity:.3;
+}
+
+.tabs{
+  display:flex;
+  gap:10px;
+}
+
+.tabs button{
+  flex:1;
+  padding:10px;
+  background:#222;
+  border:none;
+  color:white;
+  border-radius:10px;
+}
+
+.money-box{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  font-size:20px;
+}
+
+.tattoo-section{
+  margin-bottom:25px;
+}
+
+.tattoo-slots{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+}
+
+.tattoo-slot{
+  width:70px;
+  height:70px;
+  border-radius:10px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+}
+
+@media(max-width:768px){
+
+  .wheel-container{
+    width:300px;
+    height:300px;
+  }
+
+  .wheel-btn{
+    width:85px;
+    height:85px;
+    font-size:20px;
+  }
+
+  .panel{
+    width:90%;
+    left:50%;
+    right:auto;
+    transform:translate(-50%,-50%);
+    top:55%;
+  }
+
+}
